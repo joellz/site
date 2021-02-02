@@ -1,0 +1,32 @@
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid #00069E;
+
+  select {
+    appearance: none;
+    border: none;
+    @include heldane('regular');
+    color: #00069E;
+    outline: none;
+    margin-top: 3px;
+
+    option {
+      @include from-wide-desktop {
+        font-size: 20px;
+      }
+    }
+
+    @include from-tablet {
+      font-size: 32px;
+    }
+  }
+
+  img {
+    width: 16px;
+    height: auto;
+    margin-left: 5px;
+  }
+}

@@ -1,0 +1,331 @@
+
+.home {
+  @include useFixedWidthOnDesktop;
+  width: 100%;
+  position: relative;
+
+  header {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    @include from-tablet {
+      padding: 50px;
+    }
+
+    @include from-wide-desktop {
+      padding: 50px 80px 80px 80px;
+    }
+
+    .logo {
+      width: 80px;
+
+      @include from-wide-desktop {
+        width: 100px;
+      }
+    }
+  }
+
+  .hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 2;
+    background: url('/images/hero.png') 35% 0% no-repeat;
+    background-size: cover;
+    padding: 0 30px 30px 30px;
+    box-sizing: border-box;
+    position: relative;
+
+    @include from-tablet {
+      padding: 0 50px;
+      height: 671px;
+      align-items: center;
+    }
+
+    @include from-wide-desktop {
+      padding: 0 80px;
+    }
+
+    .text {
+      position: relative;
+      z-index: 3;
+      color: white;
+
+      .blue {
+        color: #9398FF;
+      }
+
+      @include from-tablet {
+        width: 100%;
+        margin-top: 80px;
+      }
+
+      .title {
+        margin: 0;
+        @include heldane('bold');
+        font-size: 30px;
+        line-height: 30px;
+
+        @include from-tablet {
+          width: 85%;
+          font-size: 52px;
+          line-height: 57px;
+          margin-bottom: 40px;
+        }
+        @include from-wide-desktop {
+          font-size: 55px;
+          width: 75%;
+        }
+      }
+
+      p {
+        @include helveticaNow('text', 'light');
+        font-weight: 100;
+        margin: 20px 0 0 0;
+        line-height: 22px;
+        font-size: 15px;
+
+        @include from-tablet {
+          width: 88%;
+          font-size: 20px;
+          line-height: 33px;
+        }
+        @include from-wide-desktop {
+          width: 88%;
+          line-height: 35px;
+          font-size: 22px;
+        }
+      }
+
+      .down {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .skills {
+    width: 100%;
+    padding: 50px 30px;
+    box-sizing: border-box;
+
+    @include from-tablet {
+      padding: 50px;
+    }
+    @include from-wide-desktop {
+      padding: 80px;
+    }
+
+    .select {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        @include heldane('regular');
+        margin: 0 10px 0 0;
+        color: #000231;
+        font-weight: 100;
+
+        @include from-tablet {
+          font-size: 32px;
+          margin: 0 20px 0 0;
+        }
+      }
+    }
+
+    .skillslist {
+      display: grid;
+      margin-top: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 220px));
+
+      @include from-tablet {
+        margin-top: 30px
+      }
+
+      p {
+        margin: 0 0 10px 0;
+        @include helveticaNow('text', 'light');
+        color: #565656;
+
+        @include from-tablet {
+          font-size: 17px;
+          line-height: 25px;
+        }
+        @include from-wide-desktop {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+
+  .experience {
+    width: 100%;
+    padding: 50px 30px;
+    box-sizing: border-box;
+    background: #FCFCFC;
+
+    @include from-tablet {
+      padding: 50px;
+    }
+    @include from-wide-desktop {
+      padding: 80px;
+    }
+
+    h3 {
+      @include heldane('regular');
+      color: #000231;
+      margin-top: 0;
+      font-weight: 100;
+
+      @include from-wide-desktop {
+        font-size: 32px;
+      }
+    }
+
+    .jobs {
+      width: 100%;
+      height: 100%;
+
+      .branch {
+        margin: 20px 0 20px 5px;
+        width: 1px;
+        height: 35px;
+        background: #00069E;
+        position: relative;
+        margin-left: 5px;
+
+        @include from-wide-desktop {
+          margin: 35px 0 35px 5px;
+        }
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 5px;
+          border: 1px solid #00069E;
+          background: #00069E;
+          top: -6px;
+          left: -3px;
+
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 5px;
+          border: 1px solid #00069E;
+          bottom: -6px;
+          left: -3px;
+        }
+      }
+
+      .job {
+        margin: 30px 0 0 0;
+
+        @include from-wide-desktop {
+          width: 839px;
+        }
+
+        h3 {
+          @include helveticaNow('display', 'bold');
+          margin: 0;
+          font-size: 15px;
+          color: black;
+
+          @include from-wide-desktop {
+            font-weight: 100;
+            font-size: 20px;
+          }
+        }
+        small {
+          @include helveticaNow('display', 'regular');
+          margin: 5px 0 15px 0;
+          display: block;
+          font-size: 11px;
+          color: #727272;
+
+          @include from-wide-desktop {
+            font-size: 14px;
+            margin: 3px 0 15px 0;
+          }
+        }
+
+        p {
+          @include helveticaNow('text', 'light');
+          margin: 0;
+          line-height: 22px;
+          font-weight: 100;
+
+          @include from-wide-desktop {
+            font-size: 18px;
+            line-height: 23px;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 30px;
+    box-sizing: border-box;
+
+    @include from-tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+    }
+    @include from-wide-desktop {
+      padding: 80px;
+    }
+
+    .actions {
+      margin-bottom: 50px;
+
+      h1 {
+        @include heldane('regular');
+        margin: 10px 0;
+        font-size: 23px;
+        color: black;
+        font-weight: 100;
+        cursor: pointer;
+
+        @include from-wide-desktop {
+          font-size: 32px;
+          margin: 20px 0;
+
+          &:hover {
+            color: #00069E;
+          }
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .darklogo {
+      width: 80px;
+
+      @include from-wide-desktop {
+        width: 100px;
+      }
+    }
+  }
+}
