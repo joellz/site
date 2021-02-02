@@ -1,0 +1,83 @@
+
+.contact {
+  width: 100%;
+  @include useFixedWidthOnDesktop;
+  position: relative;
+
+  header {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include from-tablet {
+      padding: 50px;
+    }
+
+    @include from-wide-desktop {
+      padding: 50px 0 80px 0;
+    }
+
+    .logo {
+      width: 80px;
+
+      @include from-wide-desktop {
+        width: 100px;
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+
+    @include from-tablet {
+      padding: 50px;
+    }
+
+    @include from-wide-desktop {
+      padding: 50px 0 80px 0;
+    }
+
+    h1 {
+      @include heldane('bold');
+
+      span {
+        color: #9398FF;
+      }
+    }
+
+    p {
+      @include helveticaNow('text', 'light');
+      color: #3F3F3F;
+      line-height: 25px;
+    }
+
+    a {
+      text-decoration: none;
+
+      button {
+        width: 193px;
+        height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+        border: none;
+        margin-top: 40px;
+        outline: none;
+        cursor: pointer;
+
+        p {
+          margin: 0;
+          color: white;
+          @include helveticaNow('display', 'bold');
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
