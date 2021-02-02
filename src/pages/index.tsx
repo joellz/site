@@ -5,7 +5,7 @@ import { categories, skills, jobs, } from 'data'
 import styles from 'styles/home.module.scss'
 import Link from 'next/link'
 
-export default function Home() {
+export default () => {
   const [ activeSkill, setActiveSkill ] = useState(categories[0])
 
   const renderSkills = () => {
