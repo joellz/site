@@ -75,8 +75,8 @@
       .title {
         margin: 0;
         @include heldane('bold');
-        font-size: 30px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 27px;
 
         @include from-wide-mobile {
           font-size: 35px;
@@ -147,7 +147,7 @@
         font-weight: 100;
 
         @include from-wide-mobile {
-          font-size: 22px;
+          font-size: 21px;
         }
         @include from-tablet {
           font-size: 32px;
