@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Dropdown } from 'components/dropdown'
 import { categories, skills, jobs, } from 'data'
 
+import Head from 'next/head'
 import styles from 'styles/home.module.scss'
 import Link from 'next/link'
 
@@ -39,10 +40,19 @@ export default () => {
 
   return (
     <div className={styles.home}>
+
+      <Head>
+        <title>joelrivera.me</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
+        <meta name="description" content="Welcome to my site. I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
+      </Head>
+
       <header>
         <img
           src='/images/logo-light.svg'
           className={styles.logo}
+          alt='Logo'
+          title='Logo'
         />
       </header>
 
@@ -58,7 +68,12 @@ export default () => {
             using the latest and greatest web technology and agile methodologies.
           </p>
 
-          <img src='/images/down-arrow.svg' className={styles.down} />
+          <img
+            src='/images/down-arrow.svg'
+            className={styles.down}
+            alt='Arrow to scroll down'
+            title='Arrow to scroll down'
+          />
         </div>
 
       </section>
@@ -105,6 +120,8 @@ export default () => {
         <img
           className={styles.darklogo}
           src='/images/logo-dark.svg'
+          alt='Logo'
+          title='Logo'
         />
       </footer>
     </div>
