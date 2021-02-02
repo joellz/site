@@ -13,12 +13,9 @@
     outline: none;
     margin-top: 3px;
 
-    option {
-      @include from-wide-desktop {
-        font-size: 20px;
-      }
+    @include from-wide-mobile {
+      font-size: 22px;
     }
-
     @include from-tablet {
       font-size: 32px;
     }

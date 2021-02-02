@@ -37,7 +37,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: flex-end;
     z-index: 2;
     background: url('/images/hero.png') 35% 0% no-repeat;
@@ -46,10 +46,12 @@
     box-sizing: border-box;
     position: relative;
 
+    @include from-wide-mobile {
+      align-items: center;
+    }
     @include from-tablet {
       padding: 0 50px;
       height: 671px;
-      align-items: center;
     }
 
     @include from-wide-desktop {
@@ -76,6 +78,10 @@
         font-size: 30px;
         line-height: 30px;
 
+        @include from-wide-mobile {
+          font-size: 35px;
+          line-height: 35px;
+        }
         @include from-tablet {
           width: 85%;
           font-size: 52px;
@@ -94,6 +100,11 @@
         margin: 20px 0 0 0;
         line-height: 22px;
         font-size: 15px;
+
+        @include from-wide-mobile {
+          font-size: 20px;
+          line-height: 25px;
+        }
 
         @include from-tablet {
           width: 88%;
@@ -135,6 +146,9 @@
         color: #000231;
         font-weight: 100;
 
+        @include from-wide-mobile {
+          font-size: 22px;
+        }
         @include from-tablet {
           font-size: 32px;
           margin: 0 20px 0 0;
@@ -156,6 +170,9 @@
         @include helveticaNow('text', 'light');
         color: #565656;
 
+        @include from-wide-mobile {
+          font-size: 17px;
+        }
         @include from-tablet {
           font-size: 17px;
           line-height: 25px;
