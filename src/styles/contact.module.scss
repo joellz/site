@@ -17,11 +17,12 @@
     }
 
     @include from-wide-desktop {
-      padding: 50px 0 80px 0;
+      padding: 50px 80px;
     }
 
     .logo {
       width: 80px;
+      cursor: pointer;
 
       @include from-wide-desktop {
         width: 100px;
@@ -39,7 +40,7 @@
     }
 
     @include from-wide-desktop {
-      padding: 50px 0 80px 0;
+      padding: 80px;
     }
 
     h1 {
@@ -48,12 +49,33 @@
       span {
         color: #9398FF;
       }
+
+      @include from-tablet {
+        font-size: 42px;
+      }
+      @include from-wide-desktop {
+        font-size: 52px;
+      }
     }
 
-    p {
+    .text {
       @include helveticaNow('text', 'light');
       color: #3F3F3F;
       line-height: 25px;
+
+      @include from-tablet {
+        width: 75%;
+        line-height: 35px;
+        font-size: 22px;
+      }
+      @include from-wide-desktop {
+        width: 75%;
+        line-height: 35px;
+        font-size: 22px;
+      }
+      @include from-large-desktop {
+        width: 53%;
+      }
     }
 
     a {
@@ -70,6 +92,12 @@
         margin-top: 40px;
         outline: none;
         cursor: pointer;
+
+        &:hover {
+          @include from-wide-desktop {
+            background: #9398FF;
+          }
+        }
 
         p {
           margin: 0;
