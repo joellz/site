@@ -45,6 +45,7 @@ export const skills: ISkill[] = [
   { name: 'HTML5', category: 'Front-End Development' },
   { name: 'Firebase', category: 'Front-End Development' },
   { name: 'JSON', category: 'Front-End Development' },
+  { name: 'Framer Motion', category: 'Front-End Development' },
   { name: 'Local Storage', category: `API's` },
   { name: 'Watson', category: `API's` },
   { name: 'REST', category: `API's` },
