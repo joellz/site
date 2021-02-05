@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group Copy 3</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Group-Copy-3" transform="translate(-328.000000, -1207.000000)" filter="url(#filter-1)">
+            <g transform="translate(328.000000, 1207.000000)" id="navigation-right-circle-1" stroke="#000000" stroke-width="1.5">
+                <line x1="15.1259167" y1="10.99725" x2="6.87591667" y2="10.99725" id="Shape"></line>
+                <polyline id="Shape" points="11.6884167 7.55975 15.1259167 10.99725 11.6884167 14.43475"></polyline>
+                <circle id="Oval" cx="11.0009167" cy="10.99725" r="9.625"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
