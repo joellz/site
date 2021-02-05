@@ -1,4 +1,14 @@
 
+export interface IProject {
+  brand: string
+  title: string
+  logoURL: string
+  description: string
+  demoURL: string
+  slug: string
+  skills: string[]
+}
+
 export interface ISkill {
   name: string
   category:
@@ -34,10 +44,12 @@ export const categories = [
 
 export const skills: ISkill[] = [
   { name: 'React', category: 'Front-End Development' },
+  { name: 'React Router', category: 'Front-End Development' },
   { name: 'Redux', category: 'Front-End Development' },
   { name: 'RxJS', category: 'Front-End Development' },
   { name: 'CSS3', category: 'Front-End Development' },
   { name: 'Sass', category: 'Front-End Development' },
+  { name: 'CSS Modules', category: 'Front-End Development' },
   { name: 'JavaScript', category: 'Front-End Development' },
   { name: 'TypeScript', category: 'Front-End Development' },
   { name: 'Angular', category: 'Front-End Development' },
@@ -64,6 +76,7 @@ export const skills: ISkill[] = [
   { name: 'Git', category: 'Source Control' },
   { name: 'MongoDB', category: 'Databases' },
   { name: 'Mongoose ODM', category: 'Databases' },
+  { name: 'Elasticsearch', category: 'Databases' },
   { name: 'Firebase', category: 'Databases' },
   { name: 'JSON', category: 'Back-End Development' }
 ]
