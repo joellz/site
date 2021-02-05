@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Dropdown } from 'components/dropdown'
 import { categories, skills, jobs, } from 'data'
+import { Header } from 'components/header'
 
+import scroll from 'zenscroll'
 import Head from 'next/head'
 import styles from 'styles/home.module.scss'
 import Link from 'next/link'
 
-export default () => {
+const Home = () => {
   const [ activeSkill, setActiveSkill ] = useState(categories[0])
 
   const renderSkills = () => {
@@ -47,14 +49,7 @@ export default () => {
         <meta name="description" content="Welcome to my site. I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
       </Head>
 
-      <header>
-        <img
-          src='/images/logo-light.svg'
-          className={styles.logo}
-          alt='Logo'
-          title='Logo'
-        />
-      </header>
+      <Header />
 
       <section className={styles.hero}>
 
@@ -73,12 +68,16 @@ export default () => {
             className={styles.down}
             alt='Arrow to scroll down'
             title='Arrow to scroll down'
+            onClick={() => {
+              const element = document.getElementById('skills')
+              scroll.to(element)
+            }}
           />
         </div>
 
       </section>
 
-      <section className={styles.skills}>
+      <section className={styles.skills} id='skills'>
         <div className={styles.select}>
           <h3>Skills in</h3>
 
@@ -127,3 +126,5 @@ export default () => {
     </div>
   )
 }
+
+export default Home
