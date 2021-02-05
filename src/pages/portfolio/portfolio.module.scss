@@ -1,0 +1,130 @@
+
+.portfolio {
+  width: 100%;
+  @include useFixedWidthOnDesktop;
+  position: relative;
+
+  .skeletonGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    @include from-tablet {
+      padding: 0 50px;
+    }
+
+    @include from-wide-desktop {
+      padding: 0 80px 50px 80px;
+    }
+
+    .skeletonCard {
+      width: 100%;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+  }
+
+  .grid {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+
+    @include from-tablet {
+      padding: 0 50px;
+    }
+
+    @include from-wide-desktop {
+      padding: 0 80px 50px 80px;
+    }
+
+    .project, .default {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #979797;
+      cursor: pointer;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      .brand {
+        max-width: 130px;
+      }
+
+      .cta, .defaultcta {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 25px;
+        display: none;
+
+        p {
+          margin: 0 7px 0 0;
+          @include helveticaNow('text', 'light');
+        }
+
+        img {
+          width: 21px;
+        }
+      }
+
+      @include from-wide-desktop {
+        &:hover {
+          border: 1px solid #00069E;
+
+          .cta {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    .default {
+      background: black;
+      border: none;
+
+      .cta, .getstarted {
+        display: flex;
+        align-items: center;
+        position: initial;
+
+        p {
+          color: white;
+          @include helveticaNow('display', 'regular');
+        }
+      }
+      .getstarted {
+        p {
+          margin-right: 10px;
+          text-transform: capitalize;
+        }
+      }
+
+      @include from-wide-desktop {
+        &:hover {
+          border: none;
+          background: #00069E;
+
+          p {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+}
