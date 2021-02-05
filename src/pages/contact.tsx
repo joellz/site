@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
+import { Header } from 'components/header'
 
-import Link from 'next/link'
 import styles from 'styles/contact.module.scss'
 import Head from 'next/head'
 
-export default () => {
+const Contact = () => {
   return (
     <div className={styles.contact}>
 
@@ -18,14 +18,10 @@ export default () => {
         />
       </Head>
 
-      <header>
-        <Link href='/'>
-          <img
-            src='/images/logo-dark.svg'
-            className={styles.logo}
-          />
-        </Link>
-      </header>
+      <Header
+        type='dark'
+        absolute={false}
+      />
 
       <div className={styles.body}>
         <h1>hello@joelrivera<span>.</span>me</h1>
@@ -48,3 +44,5 @@ export default () => {
     </div>
   )
 }
+
+export default Contact
