@@ -4,35 +4,6 @@
   width: 100%;
   position: relative;
 
-  header {
-    width: 100%;
-    padding: 30px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-
-    @include from-tablet {
-      padding: 50px;
-    }
-
-    @include from-wide-desktop {
-      padding: 50px 80px 80px 80px;
-    }
-
-    .logo {
-      width: 80px;
-
-      @include from-wide-desktop {
-        width: 100px;
-      }
-    }
-  }
-
   .hero {
     width: 100%;
     height: 100vh;
@@ -120,6 +91,7 @@
 
       .down {
         margin-top: 30px;
+        cursor: pointer;
       }
     }
   }
@@ -189,13 +161,15 @@
     width: 100%;
     padding: 50px 30px;
     box-sizing: border-box;
-    border: 1px solid #00069E;
+    border-top: 1px solid $royal;
+    border-bottom: 1px solid $royal;
 
     @include from-tablet {
       padding: 50px;
     }
     @include from-wide-desktop {
       padding: 80px;
+      border: 1px solid $royal
     }
 
     h3 {
@@ -217,7 +191,7 @@
         margin: 20px 0 20px 5px;
         width: 1px;
         height: 35px;
-        background: #00069E;
+        background: $royal;
         position: relative;
         margin-left: 5px;
 
@@ -231,8 +205,8 @@
           width: 5px;
           height: 5px;
           border-radius: 5px;
-          border: 1px solid #00069E;
-          background: #00069E;
+          border: 1px solid $royal;
+          background: $royal;
           top: -6px;
           left: -3px;
 
@@ -243,7 +217,7 @@
           width: 5px;
           height: 5px;
           border-radius: 5px;
-          border: 1px solid #00069E;
+          border: 1px solid $royal;
           bottom: -6px;
           left: -3px;
         }
@@ -330,7 +304,7 @@
           margin: 20px 0;
 
           &:hover {
-            color: #00069E;
+            color: $royal;
           }
         }
 
