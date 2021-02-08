@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { Dropdown } from 'components/dropdown'
 import { categories, skills, jobs, } from 'data'
 import { Header } from 'components/header'
+import { Footer } from 'components/footer'
 
 import scroll from 'zenscroll'
 import Head from 'next/head'
 import styles from 'styles/home.module.scss'
-import Link from 'next/link'
 
 const Home = () => {
   const [ activeSkill, setActiveSkill ] = useState(categories[0])
@@ -101,28 +101,7 @@ const Home = () => {
         </div>
       </section>
 
-      <footer>
-        <div className={styles.actions}>
-          <Link href='/portfolio'>
-            <h1>View Portfolio</h1>
-          </Link>
-
-          <Link href='/resume'>
-            <h1>Download Resumé</h1>
-          </Link>
-
-          <Link href='/contact'>
-            <h1>Contact Me</h1>
-          </Link>
-        </div>
-
-        <img
-          className={styles.darklogo}
-          src='/images/logo-dark.svg'
-          alt='Logo'
-          title='Logo'
-        />
-      </footer>
+      <Footer active={true} />
     </div>
   )
 }
