@@ -89,10 +89,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const url = (
     isDev ?
     `http://localhost:3200/api/projects` :
-    `${process.env.BASE_URL}/api/projects`
+    `/api/projects`
   )
 
-  console.log('url:', url)
   const response = await axios.get(url)
   const projects: IProject[] = response.data.projects
 
