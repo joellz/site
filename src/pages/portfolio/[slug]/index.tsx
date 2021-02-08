@@ -1,14 +1,21 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Header } from 'components/header'
+import { Footer } from 'components/footer'
 import { VideoPlayer } from 'components/video'
+import { GetServerSideProps } from 'next'
+import { IProject } from 'data'
 
 import styles from './styles.module.scss'
 import Link from 'next/link'
 import Head from 'next/head'
 import axios from 'axios'
+import scroll from 'zenscroll'
+import Classnames from 'classnames'
 
 const Project = ({ title, description, logoURL, demoURL, skills }) => {
+
   const [ demoActive, setDemoActive ] = useState(false)
+  const videoSectionRef = useRef(null)
 
   const Skills = () => {
 
@@ -27,14 +34,35 @@ const Project = ({ title, description, logoURL, demoURL, skills }) => {
     )
   }
 
-  const renderVideoPlayer = () => {
-    if(demoActive){
-      return ( <VideoPlayer src={demoURL} /> )
-    }
+  const VideoSection = () => {
+
+    const videoClasses = Classnames({
+      [styles.video]: true,
+      [styles.active]: demoActive
+    })
+
+    return (
+      <section className={videoClasses} ref={videoSectionRef}>
+        {
+          demoActive ?
+          <>
+            <h3>Demo</h3>
+
+            <div className={styles.wrapper}>
+              <VideoPlayer src={demoURL} />
+            </div>
+          </> : null
+        }
+      </section>
+    )
   }
 
   const onLaunchDemoClick = () => {
     setDemoActive(true)
+
+    if(videoSectionRef.current){
+      scroll.to(videoSectionRef.current)
+    }
   }
 
   return (
@@ -74,20 +102,23 @@ const Project = ({ title, description, logoURL, demoURL, skills }) => {
             </button>
           </Link>
         </div>
-
-        <section className={styles.video}>
-          { renderVideoPlayer() }
-        </section>
       </div>
+
+      <VideoSection />
+      <Footer active={demoActive} />
     </div>
   )
 }
 
 export default Project
 
-export async function getServerSideProps(ctx) {
+export const getServerSideProps: GetServerSideProps = async ctx => {
   const { params: { slug } } = ctx
   const isDev: boolean = (process.env.NODE_ENV === 'development')
+
+  //absolute paths are needed in server env
+  //because server has no context of browser location
+  //to utilize relative paths
 
   const url = (
     isDev ?
@@ -96,10 +127,9 @@ export async function getServerSideProps(ctx) {
   )
 
   const response = await axios.get(url)
+  const project: IProject = response.data.project[0]
 
   return {
-    props: {
-      ...response.data.project[0]
-    }
+    props: { ...project }
   }
 }
