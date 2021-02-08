@@ -1,97 +1,60 @@
-import { useEffect, useState } from 'react'
 import { IProject } from 'data'
 import { Header } from 'components/header'
+import { GetStaticProps } from 'next'
 
 import styles from './portfolio.module.scss'
-import Skeleton from 'react-loading-skeleton'
 import Link from 'next/link'
 import Head from 'next/head'
 import axios from 'axios'
 
-const Portfolio = () => {
-  const [ projects, setProjects ] = useState<IProject[]>(null)
-  const [ loading, setLoading ] = useState(true)
-
-  useEffect(() => {
-    axios.get('/api/projects')
-
-    .then(({ data }) => {
-      setProjects(data.projects)
-      setLoading(false)
-    })
-    .catch(error => {
-      console.log(error)
-    })
-  }, [])
-
+const Portfolio = ({ projects }) => {
 
   const ProjectGrid = () => {
-    if(loading){
-      const items = [1,2,3,4,5,6,7,8].map((item, i) => {
-        return (
-          <div className={styles.skeletonCard} key={i}>
-            <Skeleton
-              width='100%'
-              height='100%'
-              style={{ borderRadius: 0 }}
+    const Project = ({ logoURL, slug }) => {
+      return (
+        <Link href={`/portfolio/${slug}`}>
+          <div className={styles.project}>
+            <img
+              className={styles.brand}
+              src={logoURL}
             />
+
+            <div className={styles.cta}>
+              <p>View Demo</p>
+              <img src={`/images/portfolio/arrow.svg`} />
+            </div>
           </div>
-        )
-      })
-      return (
-        <div className={styles.skeletonGrid}>
-         {items}
-        </div>
+        </Link>
       )
     }
-    else {
 
-      const Project = ({ logoURL, slug }) => {
-        return (
-          <Link href={`/portfolio/${slug}`}>
-            <div className={styles.project}>
-              <img
-                className={styles.brand}
-                src={logoURL}
-              />
-
-              <div className={styles.cta}>
-                <p>View Demo</p>
-                <img src={`/images/portfolio/arrow.svg`} />
-              </div>
-            </div>
-          </Link>
-        )
-      }
-
-      const Default = () => {
-        return (
-          <Link href='/contact'>
-            <div className={styles.default}>
-              <div className={styles.getstarted}>
-                <p>Let's get started</p>
-                <img src={`/images/portfolio/arrow-light.svg`} />
-              </div>
-            </div>
-          </Link>
-        )
-      }
-
-      const renderProjects = () => {
-        if(projects !== null){
-          return projects.map((project, i) => {
-            return ( <Project key={i} { ...project } /> )
-          })
-        }
-      }
-
+    const Default = () => {
       return (
-        <div className={styles.grid}>
-          { renderProjects() }
-          <Default />
-        </div>
+        <Link href='/contact'>
+          <div className={styles.default}>
+            <div className={styles.getstarted}>
+              <p>Let's get started</p>
+              <img src={`/images/portfolio/arrow-light.svg`} />
+            </div>
+          </div>
+        </Link>
       )
     }
+
+    const renderProjects = () => {
+      if(projects !== null){
+        return projects.map((project, i) => {
+          return ( <Project key={i} { ...project } /> )
+        })
+      }
+    }
+
+    return (
+      <div className={styles.grid}>
+        { renderProjects() }
+        <Default />
+      </div>
+    )
   }
 
   return (
@@ -115,3 +78,23 @@ const Portfolio = () => {
 }
 
 export default Portfolio
+
+export const getStaticProps: GetStaticProps = async () => {
+  const isDev: boolean = (process.env.NODE_ENV === 'development')
+
+  //absolute paths are needed in server env
+  //because server has no context of browser location
+  //to utilize relative paths
+
+  const url = (
+    isDev ?
+    `http://localhost:3200/api/projects` :
+    `https://joelrivera.me/api/projects`
+  )
+  const response = await axios.get(url)
+  const projects: IProject[] = response.data.projects
+
+  return {
+    props: { projects }
+  }
+}
