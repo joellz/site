@@ -1,6 +1,6 @@
 import { IProject } from 'data'
 import { Header } from 'components/header'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 
 import styles from './portfolio.module.scss'
 import Link from 'next/link'
@@ -79,7 +79,7 @@ const Portfolio = ({ projects }) => {
 
 export default Portfolio
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const isDev: boolean = (process.env.NODE_ENV === 'development')
 
   //absolute paths are needed in server env
