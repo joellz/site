@@ -30,8 +30,11 @@ export const Header: FC<IProps> = props => {
       color: (type === 'light' ? 'white' : 'black')
     }
 
-    const portfolioClass = pathname === '/portfolio' ? styles.active : null
-    const contactClass   = pathname === '/contact'   ? styles.active : null
+    const isPortfolio = (pathname.includes('/portfolio'))
+    const isContact   = (pathname === '/contact')
+
+    const portfolioClass = isPortfolio ? styles.active : null
+    const contactClass   = isContact   ? styles.active : null
 
     return (
       <nav className={styles.nav}>
