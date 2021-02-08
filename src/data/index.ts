@@ -45,6 +45,7 @@ export const categories = [
 export const skills: ISkill[] = [
   { name: 'React', category: 'Front-End Development' },
   { name: 'React Router', category: 'Front-End Development' },
+  { name: 'React Hooks', category: 'Front-End Development' },
   { name: 'Redux', category: 'Front-End Development' },
   { name: 'RxJS', category: 'Front-End Development' },
   { name: 'CSS3', category: 'Front-End Development' },
