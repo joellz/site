@@ -89,7 +89,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const url = (
     isDev ?
     `http://localhost:3200/api/projects` :
-    `/api/projects`
+    `https://site-h4ih8y0ou.vercel.app/api/projects`
   )
 
   const response = await axios.get(url)
