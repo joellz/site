@@ -123,7 +123,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   const url = (
     isDev ?
     `http://localhost:3200/api/project?slug=${slug}` :
-    `https://joelrivera.me/api/project?slug=${slug}`
+    `${process.env.BASE_URL}/api/project?slug=${slug}`
   )
 
   const response = await axios.get(url)

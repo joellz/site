@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const url = (
     isDev ?
     `http://localhost:3200/api/projects` :
-    `https://joelrivera.me/api/projects`
+    `${process.env.BASE_URL}/api/projects`
   )
   const response = await axios.get(url)
   const projects: IProject[] = response.data.projects
