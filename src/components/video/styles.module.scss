@@ -1,10 +1,16 @@
 
 .player {
-  width: 100%;
+  width: auto;
+  height: auto;
+
+  > div {
+    width: 100% !important;
+    height: 100% !important;
+  }
 
   video {
     width: 100%;
-    height: auto;
+    width: 100%;
     outline: none;
   }
 }
