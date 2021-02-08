@@ -161,15 +161,13 @@
     width: 100%;
     padding: 50px 30px;
     box-sizing: border-box;
-    border-top: 1px solid $royal;
-    border-bottom: 1px solid $royal;
+    background: #fafafa;
 
     @include from-tablet {
       padding: 50px;
     }
     @include from-wide-desktop {
       padding: 80px;
-      border: 1px solid $royal
     }
 
     h3 {
@@ -265,60 +263,6 @@
             line-height: 23px;
           }
         }
-      }
-    }
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 30px;
-    box-sizing: border-box;
-
-    @include from-tablet {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding: 50px;
-    }
-    @include from-wide-desktop {
-      padding: 80px;
-    }
-
-    .actions {
-      margin-bottom: 50px;
-
-      h1 {
-        @include heldane('regular');
-        margin: 10px 0;
-        font-size: 23px;
-        color: black;
-        font-weight: 100;
-        cursor: pointer;
-
-        @include from-wide-mobile {
-          font-size: 28px;
-        }
-        @include from-wide-desktop {
-          font-size: 32px;
-          margin: 20px 0;
-
-          &:hover {
-            color: $royal;
-          }
-        }
-
-        &:first-child {
-          margin-top: 0;
-        }
-      }
-    }
-
-    .darklogo {
-      width: 80px;
-
-      @include from-wide-desktop {
-        width: 100px;
       }
     }
   }
