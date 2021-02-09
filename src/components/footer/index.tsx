@@ -26,7 +26,7 @@ export const Footer: FC<IProps> = ({ active }) => {
         </Link>
        }
 
-        <Link href='https://joelrivera.me.s3.us-east.cloud-object-storage.appdomain.cloud/resume.pdf'>
+        <Link href='https://jr-portfolio.s3.us-east.cloud-object-storage.appdomain.cloud/resume.pdf'>
           <h1>View Resumé</h1>
         </Link>
 
