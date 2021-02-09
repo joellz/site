@@ -86,7 +86,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
   //because server has no context of browser location
   //to utilize relative paths
 
-  const url = (`http://localhost:3200/api/projects`)
+  const url = (
+    isDev ?
+    `http://localhost:3200/api/projects` :
+    `${process.env.BASE_URL}/api/projects`
+  )
 
   const response = await axios.get(url)
   const projects: IProject[] = response.data.projects
