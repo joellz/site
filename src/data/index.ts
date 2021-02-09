@@ -81,7 +81,8 @@ export const skills: ISkill[] = [
   { name: 'Elasticsearch', category: 'Databases' },
   { name: 'Firebase', category: 'Databases' },
   { name: 'JSON', category: 'Back-End Development' },
-  { name: 'Socket I/O', category: 'Back-End Development' }
+  { name: 'Socket I/O', category: 'Back-End Development' },
+  { name: 'ExpressJS', category: 'Back-End Development' }
 ]
 
 export const jobs: IJob[] = [
