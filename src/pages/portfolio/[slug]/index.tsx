@@ -12,10 +12,12 @@ import axios from 'axios'
 import scroll from 'zenscroll'
 import Classnames from 'classnames'
 
-const Project = ({ title, description, logoURL, demoURL, skills }) => {
+const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
 
   const [ demoActive, setDemoActive ] = useState(false)
   const videoSectionRef = useRef(null)
+  const isBrandSite : boolean = (brand === 'Joel Rivera')
+  const isBrowser   : boolean = (typeof window !== 'undefined')
 
   const Skills = () => {
 
@@ -58,10 +60,16 @@ const Project = ({ title, description, logoURL, demoURL, skills }) => {
   }
 
   const onLaunchDemoClick = () => {
-    setDemoActive(true)
 
-    if(videoSectionRef.current){
-      scroll.to(videoSectionRef.current)
+    if(isBrandSite && isBrowser){
+      window.location.href = 'https://github.com/joellz/site'
+    }
+    else {
+      setDemoActive(true)
+
+      if(videoSectionRef.current){
+        scroll.to(videoSectionRef.current)
+      }
     }
   }
 
@@ -80,7 +88,10 @@ const Project = ({ title, description, logoURL, demoURL, skills }) => {
       />
 
       <div className={styles.body}>
-        <img src={logoURL} />
+        {
+          isBrandSite ? null : <img src={logoURL} />
+        }
+
         <h1>{title}</h1>
 
         <Skills />
@@ -93,7 +104,9 @@ const Project = ({ title, description, logoURL, demoURL, skills }) => {
           <button
             className={styles.launch}
             onClick={onLaunchDemoClick}>
-            Launch Demo
+            {
+              isBrandSite ? 'View Code' : 'Launch Demo'
+            }
           </button>
 
           <Link href='/portfolio'>
