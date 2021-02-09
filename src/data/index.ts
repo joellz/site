@@ -57,6 +57,7 @@ export const skills: ISkill[] = [
   { name: 'jQuery', category: 'Front-End Development' },
   { name: 'HTML5', category: 'Front-End Development' },
   { name: 'Firebase', category: 'Front-End Development' },
+  { name: 'Socket I/O', category: 'Front-End Development' },
   { name: 'JSON', category: 'Front-End Development' },
   { name: 'Framer Motion', category: 'Front-End Development' },
   { name: 'Local Storage', category: `API's` },
@@ -79,7 +80,8 @@ export const skills: ISkill[] = [
   { name: 'Mongoose ODM', category: 'Databases' },
   { name: 'Elasticsearch', category: 'Databases' },
   { name: 'Firebase', category: 'Databases' },
-  { name: 'JSON', category: 'Back-End Development' }
+  { name: 'JSON', category: 'Back-End Development' },
+  { name: 'Socket I/O', category: 'Back-End Development' }
 ]
 
 export const jobs: IJob[] = [
