@@ -72,11 +72,6 @@
         line-height: 22px;
         font-size: 15px;
 
-        @include from-wide-mobile {
-          font-size: 20px;
-          line-height: 25px;
-        }
-
         @include from-tablet {
           width: 88%;
           font-size: 20px;
