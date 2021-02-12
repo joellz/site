@@ -80,9 +80,11 @@ const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
         <title>My Portfolio</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={title} />
-        <meta title='og:title' content="My Portfolio" />
-        <meta title='og:image' content='/favicon.ico' />
-        <meta title='og:description' content={title} />
+        <meta property='og:title' content="My Portfolio" />
+        <meta property='og:image' content='/images/og-image.png' />
+        <meta property='og:description' content={title} />
+        <meta property="og:url" content="https://joelrivera.me/" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <Header

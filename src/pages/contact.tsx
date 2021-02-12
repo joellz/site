@@ -12,9 +12,11 @@ const Contact = () => {
         <title>Contact Me</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Contact Joel Rivera for interesting job opportunities." />
-        <meta title='og:title' content='Contact Me' />
-        <meta title='og:image' content='/favicon.ico' />
-        <meta title='og:description' content="Contact Joel Rivera for interesting job opportunities." />
+        <meta property='og:title' content='Contact Me' />
+        <meta property='og:image' content='/images/og-image.png' />
+        <meta property='og:description' content="Contact Joel Rivera for interesting job opportunities." />
+        <meta property="og:url" content="https://joelrivera.me/" />
+        <meta property="og:type" content="website" />
       </Head>
 
       <Header
