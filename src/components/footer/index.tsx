@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { useRouter } from 'next/router'
+import { openInNewTab } from 'helpers'
 
 import Link from 'next/link'
 import styles from './styles.module.scss'
@@ -10,6 +11,7 @@ interface IProps {
 
 export const Footer: FC<IProps> = ({ active }) => {
   const { pathname } = useRouter()
+  const resumeURL = 'https://jr-portfolio.s3.us-east.cloud-object-storage.appdomain.cloud/resume.pdf'
 
   if(!active){
     return null
@@ -23,12 +25,12 @@ export const Footer: FC<IProps> = ({ active }) => {
          pathname.includes('portfolio') ? null :
          <Link href='/portfolio'>
           <h1>View Portfolio</h1>
-        </Link>
+         </Link>
        }
 
-        <Link href='https://jr-portfolio.s3.us-east.cloud-object-storage.appdomain.cloud/resume.pdf'>
-          <h1>View Resumé</h1>
-        </Link>
+        <h1 onClick={() => openInNewTab(resumeURL)}>
+          View Resumé
+        </h1>
 
         <Link href='/contact'>
           <h1>Contact Me</h1>

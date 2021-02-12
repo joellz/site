@@ -4,6 +4,7 @@ import { Footer } from 'components/footer'
 import { VideoPlayer } from 'components/video'
 import { GetServerSideProps } from 'next'
 import { IProject } from 'data'
+import { openInNewTab } from 'helpers'
 
 import styles from './styles.module.scss'
 import Link from 'next/link'
@@ -31,7 +32,9 @@ const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
 
     return (
       <div className={styles.skills}>
-        { skillsList }
+        <div className={styles.scrolling}>
+          { skillsList }
+        </div>
       </div>
     )
   }
@@ -62,7 +65,7 @@ const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
   const onLaunchDemoClick = () => {
 
     if(isBrandSite && isBrowser){
-      window.location.href = 'https://github.com/joellz/site'
+      openInNewTab('https://github.com/joellz/site')
     }
     else {
       setDemoActive(true)

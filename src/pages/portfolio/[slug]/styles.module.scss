@@ -19,7 +19,7 @@
     }
 
     img {
-      width: 130px;
+      max-width: 150px;
     }
 
     h1 {
@@ -42,30 +42,38 @@
     .skills {
       width: 100%;
       height: 35px;
-      display: flex;
-      align-items: center;
-      overflow: auto;
       margin: 15px 0;
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      scrollbar-width: none;
+      position: relative;
 
-      &::-webkit-scrollbar {
-        display: none;
+      @include from-wide-desktop {
+        width: 55%;
       }
 
-      .skill {
+      .scrolling {
         display: flex;
         align-items: center;
-        height: 25px;
-        @include helveticaNow('text', 'light');
-        border: 1px solid #9398FF;
-        padding: 2px 13px 0 13px;
-        box-sizing: border-box;
-        margin-right: 10px;
-        border-radius: 40px;
-        flex-shrink: 0;
-        font-size: 14px;
-        line-height: 30px;
+        overflow: auto;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .skill {
+          display: flex;
+          align-items: center;
+          height: 25px;
+          @include helveticaNow('text', 'light');
+          border: 1px solid #9398FF;
+          padding: 2px 13px 0 13px;
+          box-sizing: border-box;
+          margin-right: 7px;
+          border-radius: 40px;
+          flex-shrink: 0;
+          font-size: 14px;
+          line-height: 30px;
+        }
       }
     }
 
