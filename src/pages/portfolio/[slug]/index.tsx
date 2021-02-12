@@ -32,9 +32,7 @@ const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
 
     return (
       <div className={styles.skills}>
-        <div className={styles.scrolling}>
-          { skillsList }
-        </div>
+        { skillsList }
       </div>
     )
   }
