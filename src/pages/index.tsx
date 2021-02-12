@@ -46,7 +46,10 @@ const Home = () => {
       <Head>
         <title>joelrivera.me</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-        <meta name="description" content="Welcome to my site. I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
+        <meta name="description" content="I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
+        <meta title='og:title' content='joelrivera.me' />
+        <meta title='og:image' content='/favicon.ico' />
+        <meta title='og:description' content="I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
       </Head>
 
       <Header />

@@ -79,10 +79,12 @@ const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
   return (
     <div className={styles.project}>
       <Head>
-        <title>Portfolio</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-        <meta name="description" content="Joel Rivera's Portfolio."
-        />
+        <title>My Portfolio</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={title} />
+        <meta title='og:title' content="My Portfolio" />
+        <meta title='og:image' content='/favicon.ico' />
+        <meta title='og:description' content={title} />
       </Head>
 
       <Header
