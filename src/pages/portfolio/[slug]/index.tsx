@@ -82,9 +82,13 @@ const Project = ({ brand, title, description, logoURL, demoURL, skills }) => {
         <meta name="description" content={title} />
         <meta property='og:title' content="My Portfolio" />
         <meta property='og:image' content='/images/og-image.png' />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property='og:description' content={title} />
         <meta property="og:url" content="https://joelrivera.me/" />
         <meta property="og:type" content="website" />
+        <meta property="og:video" content={demoURL} />
+        <meta property="og:video:type" content="video/mp4" />
       </Head>
 
       <Header

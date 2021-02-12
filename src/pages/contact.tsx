@@ -14,6 +14,8 @@ const Contact = () => {
         <meta name="description" content="Contact Joel Rivera for interesting job opportunities." />
         <meta property='og:title' content='Contact Me' />
         <meta property='og:image' content='/images/og-image.png' />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property='og:description' content="Contact Joel Rivera for interesting job opportunities." />
         <meta property="og:url" content="https://joelrivera.me/" />
         <meta property="og:type" content="website" />

@@ -46,10 +46,12 @@ const Home = () => {
       <Head>
         <title>joelrivera.me</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-        <meta name="description" content="I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
-        <meta title='og:title' content='joelrivera.me' />
-        <meta title='og:image' content='/favicon.ico' />
-        <meta title='og:description' content="I'm Joel Rivera, a senior full-stack JavaScript engineer with 7 years of real world experience." />
+        <meta name="description" content="Joel Rivera - Senior full-stack JavaScript engineer." />
+        <meta property='og:title' content='joelrivera.me' />
+        <meta property='og:image' content='/images/og-image.png' />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property='og:description' content="Joel Rivera - Senior full-stack JavaScript engineer." />
       </Head>
 
       <Header />
