@@ -90,8 +90,8 @@ export const jobs: IJob[] = [
     employer: 'IBM',
     role: 'Senior Front-End Engineer',
     begin: 'May 2015',
-    end: 'Present',
-    duration: '5 years, 9 months',
+    end: 'February 2021',
+    duration: '5 years, 10 months',
     description: 'Full-stack engineering of Watson powered web apps and beautiful, functional experiences using Javascript, Node, TypeScript, React, Angular, Mongo, CSS3, HTML5, DevOps, and Agile Methodology.'
   },
   {
