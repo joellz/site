@@ -88,7 +88,7 @@ export const skills: ISkill[] = [
 export const jobs: IJob[] = [
   {
     employer: 'IBM',
-    role: 'Senior Front-End Engineer',
+    role: 'Front-End Software Engineer',
     begin: 'May 2015',
     end: 'February 2021',
     duration: '5 years, 10 months',
@@ -96,7 +96,7 @@ export const jobs: IJob[] = [
   },
   {
     employer: 'Contractor',
-    role: 'Front-End Engineer',
+    role: 'Front-End Developer',
     begin: 'January 2015',
     end: 'May 2015',
     duration: '4 months',
@@ -104,7 +104,7 @@ export const jobs: IJob[] = [
   },
   {
     employer: 'Morgan Stanley',
-    role: 'Front-End Engineer',
+    role: 'Front-End Developer',
     begin: 'February 2014',
     end: 'December 2014',
     duration: '11 months',

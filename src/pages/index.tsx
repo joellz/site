@@ -59,7 +59,9 @@ const Home = () => {
       <section className={styles.hero}>
 
         <div className={styles.text}>
-          <h1 className={styles.title}>I'm a senior full-stack JavaScript engineer with 7 years of real world experience<span className={styles.blue}>.</span></h1>
+          <h1 className={styles.title}>
+            I'm a full-stack JavaScript engineer with 7 years of real world experience<span className={styles.blue}>.</span>
+          </h1>
 
           <p>
             I’m passionate about crafting modern, cutting-edge cloud native web apps,
