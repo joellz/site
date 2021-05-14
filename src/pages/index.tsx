@@ -30,13 +30,15 @@ const Home = () => {
 
       if(i !== jobs.length - 1){
         return (
-          <>
+          <div key={i}>
             <Job />
             <div className={styles.branch} />
-          </>
+          </div>
         )
       }
-      return (<Job /> )
+      return (
+        <Job key={i} />
+      )
     })
   }
 
@@ -46,12 +48,12 @@ const Home = () => {
       <Head>
         <title>joelrivera.me</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
-        <meta name="description" content="Joel Rivera - Senior full-stack JavaScript engineer." />
+        <meta name="description" content="Joel Rivera - Full-stack JavaScript engineer." />
         <meta property='og:title' content='joelrivera.me' />
         <meta property='og:image' content='/images/og-image.png' />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property='og:description' content="Joel Rivera - Senior full-stack JavaScript engineer." />
+        <meta property='og:description' content="Joel Rivera - Full-stack JavaScript engineer." />
       </Head>
 
       <Header />
