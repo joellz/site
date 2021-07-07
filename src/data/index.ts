@@ -19,6 +19,7 @@ export interface ISkill {
   'Build Tools'           |
   'Design'                |
   'Cloud'                 |
+  'Dev Ops'               |
   'Source Control'
 }
 
@@ -39,6 +40,7 @@ export const categories = [
   'Build Tools',
   'Design',
   'Cloud',
+  'Dev Ops',
   'Source Control'
 ]
 
@@ -70,6 +72,7 @@ export const skills: ISkill[] = [
   { name: 'Babel', category: 'Build Tools' },
   { name: 'Cloud Foundry', category: 'Cloud' },
   { name: 'Red Hat OpenShift', category: 'Cloud' },
+  { name: 'IBM Cloud Continuous Delivery Pipeline', category: 'Dev Ops' },
   { name: 'Kubernetes', category: 'Cloud' },
   { name: 'Sketch', category: 'Design' },
   { name: 'Adobe Illustrator CC', category: 'Design' },
